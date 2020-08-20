@@ -1,31 +1,51 @@
 import pyttsx3
 import os
 import time
+import webbrowser
+
 print("Welcome.")
 
-pyttsx3.speak("Hello. How can i help u with")
+pyttsx3.speak("Hello. How can i help you with Sir")
 
 while True:
-	print("What is your requirement:", end="")
+	print("How can I help you:", end="")
 
 	p=input()
 	
 
 	
-	if(("Run" in p) or ("run" in p)) and (("mozilla" in p) or ("firefox" in p) or ("browser" in p)):
+	if(("Run" in p) or ("run" in p) or ("Open" in p)) and (("mozilla" in p) or ("firefox" in p) or ("browser" in p)):
 		print("Your requirement is",p)
+		print("Opening Mozilla Firefox")
+		pyttsx3.speak("Opening Firefox.Please wait.")
 		time.sleep(2)
 		os.system("firefox")
 
-	elif (("Run" in p) or ("run" in p) or ("Execute" in p)) and (("gedit" in p) or ("editor" in p) or ("notepad" in p)):
+	elif (("Run" in p) or ("run" in p) or ("Execute" in p) or ("Open" in p)) and (("gedit" in p) or ("editor" in p) or ("notepad" in p)):
 		print("Your requirement is",p)
+		print("Opening Notepad")
+		pyttsx3.speak("Opening Notepad.Please wait.")
 		time.sleep(2)
 		os.system("gedit")
 
-	elif (("Run" in p) or ("run" in p)) and (("player" in p) or ("media" in p) or ("vlc" in p)):
+	elif (("Run" in p) or ("run" in p) or ("Open" in p)) and (("player" in p) or ("media" in p) or ("vlc" in p)):
 		print("Your requirement is",p)
+		print("Opening VLC media Player")
+		pyttsx3.speak("Opening Media Player.Please wait.")
 		time.sleep(2)
 		os.system("vlc")
+		
+	elif (("Run" in p) or ("run" in p) or ("Open" in p)) and (("Calculator" in p) ):
+		print("Your requirement is",p)
+		print("Opening Calculator")
+		pyttsx3.speak("Opening Calculator.Please wait.")
+		time.sleep(2)
+		os.system("gnome-calculator")
+		
+	elif ("Open" in p) and ("Youtube" in p):
+		pyttsx3.speak("Opening Youtube.Please wait.")
+		time.sleep(2)
+		webbrowser.open('https://www.youtube.com/', new=2)
 
 	elif ("exit" in p) or ("end" in p) or ("quit" in p):
 		print("Thank You")
